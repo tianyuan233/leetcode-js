@@ -6,7 +6,7 @@ var checkPossibility = function (nums) {
 
     var count = 0; 
 
-    for (let i = 0; i < nums.length; i +  + ) {
+    for (let i = 0; i < nums.length; i ++ ) {
         if (nums[i] > nums[i + 1]) {
             count ++ ; 
 
