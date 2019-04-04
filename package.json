@@ -1,0 +1,19 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "js刷leetcode 呀嘿嘿",
+  "main": "136_singleNumber.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianyuan233/leetcode-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tianyuan233/leetcode-js/issues"
+  },
+  "homepage": "https://github.com/tianyuan233/leetcode-js#readme"
+}
