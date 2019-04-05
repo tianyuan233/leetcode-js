@@ -1,3 +1,4 @@
+//solution 1
 const flipAndInvertImage = function (A) {
   let temp = []
   for (let i = 0; i < A.length; i++) {
@@ -7,8 +8,20 @@ const flipAndInvertImage = function (A) {
   return temp;
 }
 
+// console.log(
+//   flipAndInvertImage([
+//     [1, 1, 0],
+//     [1, 0, 1],
+//     [0, 0, 0]
+//   ])
+// );
+
+//solution 2
+const flipAndInvertImage2 = function (A) {
+  return A.map((arr) => arr.reverse()).map((arr) => arr.map((x) => 1^x));
+}
 console.log(
-  flipAndInvertImage([
+  flipAndInvertImage2([
     [1, 1, 0],
     [1, 0, 1],
     [0, 0, 0]
