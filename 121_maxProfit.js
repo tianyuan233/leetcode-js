@@ -8,8 +8,13 @@ let maxProfit = function (prices) {
   for (let i = 0; i < prices.length; i++) {
     lowest = Math.min(prices[i], lowest)
     profit = Math.max(prices[i] - lowest, profit)
+    console.log('----start----')
+    console.log('lowest', lowest)
+    console.log('profit', profit)
+    console.log('----end----')
+
   }
 
   return profit
 }
-console.log(maxProfit([7, 1, 5, 3, 6, 4]))
+console.log(maxProfit([7, 6, 5, 4, 3, 2, 1]))
