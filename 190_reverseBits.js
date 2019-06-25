@@ -1,20 +1,21 @@
-let reverseBits = function (n) {
-  let data = []
-  while (n > 0) {
-    data.push(n % 2)
-    n = n >>> 1
-    // n = parseInt(n / 2, 10);
-    // console.log(n);
+// var reverseBits = function (n) {
+//   var res = 0
+//   for (let i = 0; i < 32; i++) {
+//     if (n & 1 === 1) {
+//       res = (res << 1) + 1
+//     } else {
+//       res << 1
+//     }
+//     n >>> 1
+//   }
+//   return res
+// }
 
-  }
-  console.log(data.length)
+var reverseBits = function (n) {
+  var t = n.toString(2).split("");
+  while (t.length < 32) t.unshift("0");
+  return parseInt(t.reverse().join(""), 2);
+};
+console.log(reverseBits(11111111111111111111111111111101));
 
-  for (let i = data.length; i < 32; i++) {
-    data.push(0)
-  }
-  // console.log(data);
-  return parseInt(data.join(''), 2)
 
-}
-
-reverseBits(00000000000000000000000000000111)

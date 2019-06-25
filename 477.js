@@ -1,12 +1,16 @@
-/**
- * @param {number} x
- * @param {number} y
- * @return {number}
- */
 let hammingDistance = function (x, y) {
   // return (x ^ y).toString(2).split('').reduce((sum, ele) => {
   //   return sum + Number(ele)
   // }, 0)
+
+  let z = x ^ y
+  let count = 0
+  while (z != 0) {
+    z = z ^ (z - 1)
+    count++
+  }
+  return count
+
 
   // let count = 0
   // while (x !== 0 || y !== 0) {
@@ -21,15 +25,15 @@ let hammingDistance = function (x, y) {
   // }
   // // console.log(count)
   // return count
-
-
-  let z = x ^ y
-  let count = 0
-  while (z !== 0) {
-    z = z & (z - 1)
-    count++
-  }
-  return count
 }
 
-console.log(hammingDistance(1, 5))
+let totalHammingDistance = function (nums) {
+  let sum = 0
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      sum += hammingDistance(nums[i], nums[j])
+    }
+  }
+  return sum
+
+}
