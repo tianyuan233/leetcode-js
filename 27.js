@@ -13,5 +13,8 @@ var removeElement = function (nums, val) {
   }
   return res
 };
-removeElement([3,2,2,3],3)
-console.log(removeElement([3, 2, 2, 3], 3));
+// removeElement([3,2,2,3],3)
+// console.log(removeElement([3, 2, 2, 3], 3));
+// var removeElement = function (nums, val) {
+//   return nums.join('').split(val).join('').length
+// }
