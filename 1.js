@@ -4,16 +4,17 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-  var left = 0
-  var right = nums.length - 1
-  while (nums[left] + nums[right] !== target) {
-    var res = nums[left] + nums[right]
-    if (res > target) {
-      right--
+  var map = {}
+  for (let i = 0; i < nums.length; i++) {
+    need = target - nums[i]
+    if (need in map) {
+      return [map[need],i]
     } else {
-      left++
+      map[nums[i]] = i
     }
+    
   }
-  return [left,right]
 
 };
+
+console.log(twoSum([2,7,9,13],11));
