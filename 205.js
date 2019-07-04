@@ -3,6 +3,32 @@
  * @param {string} t
  * @return {boolean}
  */
+// var isIsomorphic = function (s, t) {
+//   if (s.length !== t.length) {
+//     return false
+//   }
+//   if (s == t) {
+//     return true
+//   }
+
+//   var map = {}
+//   for (let i = 0; i < s.length; i++) {
+//     if (s[i] in map) {
+//       if (map[s[i]] !== t[i]) {
+//         return false
+//       }
+//     } else {
+//       for (var key in map) {
+//         if (map[key] == t[i]) {
+//           return false
+//         }
+//       }
+//       map[s[i]] = t[i]
+//     }
+//   }
+//   return true
+// };
+
 var isIsomorphic = function (s, t) {
   if (s.length !== t.length) {
     return false
@@ -11,21 +37,27 @@ var isIsomorphic = function (s, t) {
     return true
   }
 
-  var map = {}
+  var map1 = {}
+  var map2 = {}
   for (let i = 0; i < s.length; i++) {
-    if (s[i] in map) {
-      if (map[s[i]] !== t[i]) {
+    if (s[i] in map1) {
+      if (map1[s[i]] !== t[i]) {
         return false
       }
     } else {
-      for (var key in map) {
-        if (map[key] == t[i]) {
-          return false
-        }
+      map1[s[i]] = t[i]
+    }
+
+    if (t[i] in map2) {
+      if (map2[t[i]] !== s[i]) {
+        return false
       }
-      map[s[i]] = t[i]
+    } else {
+      map2[t[i]] = s[i]
     }
   }
+  console.log(map1);
+  console.log(map2);
   return true
 };
 console.log(isIsomorphic('ab', 'aa'));
