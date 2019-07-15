@@ -7,21 +7,21 @@
  */
 /**
  * @param {Node} root
- * @return {number[]}
+ * @return {number[][]}
  */
 var levelOrder = function (root) {
   var res = []
-  function order(root) {
-    var temp = []
+  function order(root, level = 0) {
     if (root) {
-      temp.push(root.val)
-      var cd = root.children
-      cd.forEach(ele => {
-        order(ele)
+      res[level] = res[level] || []
+      res[level].push(root.val)
+      var rc = root.children
+      rc.forEach(node => {
+        order(node,level+1)
       });
     }
-    res.push(temp)
   }
   order(root)
   return res
+  
 };
