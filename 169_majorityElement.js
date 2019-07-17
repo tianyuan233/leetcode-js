@@ -11,26 +11,20 @@
 // majorityElement1()
 
 let majorityElement2 = function (nums) {
-  let map = new Map()
-  nums.forEach(element => {
-    if (!map.has(element)) {
-      map.set(element, 1)
-    } else {
-      map.set(element, map.get(element) + 1)
-    }
-  })
-
-  // map.forEach((value, key) => {
-  //   if (value > nums.length / 2) {
-  //     console.log(key)
-
-  //   }
-  // })
-  for (let [k, v] of map.entries()) {
-    if (v > nums.length / 2) {
-      return k
+  let map = {}
+  var value = nums.length / 2
+  for (let i = 0; i < nums.length; i++) {
+    let ele = nums[i]
+    if(map[ele]) {
+      map[ele]+=1
+      if (map[ele] > value) {
+        return ele
+      }
+    }else {
+      map[ele] = 1
     }
   }
+
 }
 console.log(majorityElement2([3, 2, 3]))
 
